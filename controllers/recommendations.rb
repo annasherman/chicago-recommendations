@@ -7,7 +7,7 @@ class RecommendationsController < ApplicationController
 ## inherits active record and not found.
 get '/' do
   @recommendations = Recommendations.all
-  erb :read_rec
+  erb :index
 end
 
 get '/api' do
@@ -31,6 +31,9 @@ post '/create' do
   @rec.notes = params[:notes]
   @rec.type_of_place = params[:type_of_place]
   @rec.save
+
+  @recommendations = Recommendations.all
+
   erb :index
 end
 
