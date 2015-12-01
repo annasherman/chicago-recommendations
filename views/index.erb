@@ -1,23 +1,35 @@
+<h3>Create a Recommendation</h3>
+
+<form action="/create" method="post">
+  <input type="text" name="place" placeholder="Name of Place">
+  <input type="text" name="type_of_place" placeholder="type of place">
+  <input type="text" name="contributor" placeholder="contributor">
+  <input type="text" name="notes" placeholder="Notes">
+  <input type="Submit" value="Add an item">
+  <!-- these bind directly to a params object key -->
+</form>
+
+<h3>Delete a Recommendation</h3>
+
+<form action="/destroy" method="delete">
+  <input type="text" name="id" placeholder="ID of Place">
+  <input type="Submit" value="Delete">
+  <!-- these bind directly to a params object key -->
+</form>
+
 <section class="Recommendations">
-<% @recommendations.each do |x| %>
-<p><%= x.contributor %>
+<% recommender = @recommendations.reverse %>
+<% recommender.each do |x| %>
+<p>
+
+  <%= x.contributor %>
 
 <%= x.place %>
 
 <%= x.notes %>
 
 <%= x.type_of_place %></p>
+<a href="/destroy/<%=x.id%>">Delete</a>
 
 <% end %>
 </section>
-
-<h3>Create a Recommendation</h3>
-
-<form action="/create" method="post">
-  <input type="text" name="place" value="Name of Place">
-  <input type="text" name="type_of_place" value="type of place">
-  <input type="text" name="contributor" value="contributor">
-  <input type="text" name="notes" value="Notes">
-  <input type="Submit" value="Add an item">
-  <!-- these bind directly to a params object key -->
-</form>

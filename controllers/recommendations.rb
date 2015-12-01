@@ -20,7 +20,7 @@ get '/api/:id' do
 end
 
 get '/create' do
- erb :create_rec
+ erb :index
 end
 
 post '/create' do
@@ -37,5 +37,11 @@ post '/create' do
   erb :index
 end
 
+get '/destroy/:id' do
+  @rec = Recommendations.find(params[:id])
+  @rec.destroy
+  @recommendations = Recommendations.all
+  erb :index
+end
 
 end
