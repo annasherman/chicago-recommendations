@@ -1,0 +1,12 @@
+body{
+  background-color: rgba(157, 231, 193, 0.75);
+}
+
+.Recommendations {
+  background-color: rgb(241, 241, 241);
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 5%;
+  padding: 2%;
+  repeat: no-repeat;
+}

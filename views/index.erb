@@ -1,0 +1,12 @@
+<section class="Recommendations">
+<% @recommendations.each do |x| %>
+<p><%= x.contributor %>
+
+<%= x.place %>
+
+<%= x.notes %>
+
+<%= x.type_of_place %></p>
+
+<% end %>
+</section>
