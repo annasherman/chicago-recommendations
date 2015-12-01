@@ -1,3 +1,3 @@
 class Recommendations < ActiveRecord::Base
 
-end 
+end
